@@ -1,0 +1,24 @@
+{
+  "authedUser": "123",
+  "questions": {
+    "1": {
+      "authorId": "123",
+      "question": "Would you rather",
+      "optionOne": {
+        "text": "walk",
+        "votes": [
+          "1",
+          "3"
+        ]
+      },
+      "optionTwo": {
+        "text": "drive",
+        "votes": [
+          "5",
+          "2"
+        ]
+      },
+      "timestamp": 327843864
+    }
+  }
+}
