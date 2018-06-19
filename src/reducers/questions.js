@@ -1,4 +1,4 @@
-import {RECEIVE_QUESTIONS, ADD_QUESTION, UPDATE_QUESTION} from '../actions/questions'
+import {RECEIVE_QUESTIONS, ADD_QUESTION, UPDATE_QUESTION} from '../actions/actionTypes'
 import {createReducer} from './reducerUtil'
 
 const questionReducers = createReducer({}, {

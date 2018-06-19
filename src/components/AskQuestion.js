@@ -14,27 +14,33 @@ class AskQuestion extends Component {
   state = {
     isComplete: false,
     optionOneText: '',
-    optionTwoText: ''
+    optionTwoText: '',
+    toHome: false
   }
 
   handleChange = (event) => {
     const {name, value} = event.target
-    const newState = this.state;
-    newState[name] = value
-    newState.isComplete = newState.optionOneText !== '' && newState.optionTwoText !== '';
-    this.setState(newState)
+    const {optionOneText, optionTwoText} = this.state
+    // Validate the form on every key press.
+    const otherOptionText = name === 'optionOneText' ? optionTwoText : optionOneText
+    const isComplete = value !== '' && otherOptionText !== '' && value !== otherOptionText;
+    this.setState({
+      [name]: value,
+      isComplete
+    })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
 
-    const {optionOneText, optionTwoText} = this.state
-    const {dispatch} = this.props
-
-    dispatch(handleAddQuestion(optionOneText, optionTwoText))
-    this.setState(() => ({
-      toHome: true
-    }))
+    const {optionOneText, optionTwoText, isComplete} = this.state
+    if (isComplete) {
+      const {dispatch} = this.props
+      dispatch(handleAddQuestion(optionOneText, optionTwoText))
+      this.setState({
+        toHome: true
+      })
+    }
   }
 
   render() {

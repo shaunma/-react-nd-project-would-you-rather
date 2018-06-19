@@ -102,13 +102,30 @@ li {
   justify-content: space-between;
 }
 
+.choice-poster {
+  display: flex;
+  align-items: center;
+}
+
+.choice-poster > span {
+  margin: 0 10px;
+}
+
 .choice-option {
   padding: 0 10px;
   width: 45%;
-  background-color: #90f0fc;
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.choice-row .chosen {
+  background-color: #90f0fc;
+}
+
+.chosen-checkmark {
+  color: #cb4788;
 }
 
 .choice-container a {

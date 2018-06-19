@@ -1,9 +1,6 @@
 import {saveQuestion} from '../utils/api'
 import {showLoading, hideLoading} from 'react-redux-loading'
-
-export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
-export const ADD_QUESTION = 'ADD_QUESTION'
-export const UPDATE_QUESTION = 'UPDATE_QUESTION'
+import {ADD_QUESTION, RECEIVE_QUESTIONS, UPDATE_QUESTION} from './actionTypes'
 
 function addQuestion(question) {
   return {

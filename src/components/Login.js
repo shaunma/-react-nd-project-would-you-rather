@@ -7,7 +7,7 @@ import {Redirect} from "react-router-dom"
 class Login extends Component {
 
   state = {
-    redirectToReferrer: false
+    isLoginSuccessful: false
   }
 
   handleChange = (event) => {
@@ -15,7 +15,7 @@ class Login extends Component {
     if (userId) {
       const {dispatch} = this.props
       dispatch(setAuthedUser(userId))
-      this.setState({redirectToReferrer: true})
+      this.setState({isLoginSuccessful: true})
     }
   }
 
@@ -35,11 +35,11 @@ class Login extends Component {
   render() {
     const {users} = this.props
     const userIds = Object.keys(users)
-    const {from} = this.props.location.state || {from: {pathname: "/"}};
-    const {redirectToReferrer} = this.state;
+    const homePage = {pathname: "/"};
+    const {isLoginSuccessful} = this.state;
 
-    if (redirectToReferrer) {
-      return <Redirect to={from}/>;
+    if (isLoginSuccessful) {
+      return <Redirect to={homePage}/>;
     }
 
     return (

@@ -1,6 +1,7 @@
-Assignment 2 = Would you rather
+## Udacity React Nanodegree Assignment 2
 
-To run
+
+### Installing
 ```
 npm install
 npm start

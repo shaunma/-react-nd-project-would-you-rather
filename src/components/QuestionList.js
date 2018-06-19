@@ -17,11 +17,12 @@ class QuestionList extends Component {
             <QuestionView
               key={question.id}
               qid={question.id}
+              authorId={question.author}
               createdAt={question.timestamp}
               text={question.text}
               optionOne={question.optionOne}
               optionTwo={question.optionTwo}
-              displayLink={true}
+              onQuestionPage={false}
             />
           ))
         }

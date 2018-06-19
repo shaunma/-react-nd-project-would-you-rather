@@ -14,7 +14,7 @@ class LoginLogout extends Component {
     <React.Fragment>
       <img
         src={user.avatarURL}
-        alt={"Avatar of " + user.name}
+        alt={`Avatar of ${user.name}`}
         className='avatar'
       />
       <span className="user-name"> {user.id}</span>
